@@ -1,0 +1,51 @@
+//! clutter.less v0.1.0 | Apache License, Version 2.0 | github.com/chromice/clutter.less
+
+// ====================
+// = Scrollbar styles =
+// ====================
+
+// See: http://davidwalsh.name/detect-scrollbar-width
+.scrollbar-measure {
+	overflow: scroll;
+	position: absolute;
+	top: -9999px;
+	width: 100px;
+	height: 100px;
+}
+
+.scrollbar (@color-primary, @color-secondary) {
+	scrollbar-base-color: @color-primary;
+	scrollbar-3dlight-color: @color-primary;
+	scrollbar-highlight-color: @color-secondary;
+	scrollbar-face-color: @color-secondary;
+	scrollbar-track-color: @color-primary;
+	scrollbar-arrow-color: @color-secondary;
+	scrollbar-shadow-color: @color-secondary;
+	scrollbar-darkshadow-color: @color-primary;
+	
+	&::-webkit-scrollbar { 
+		width: 10px;
+		height: 10px;
+	}
+	&::-webkit-scrollbar-button {
+		display: none;
+	}
+	&::-webkit-scrollbar-track {
+		background-color: @color-primary;
+	}
+	&::-webkit-scrollbar-track-piece {
+		background-color: @color-primary;
+	}
+	&::-webkit-scrollbar-thumb {
+		height: 10px;
+		background-color: @color-secondary;
+		border-radius: 0;
+	}
+	&::-webkit-scrollbar-corner {
+		background-color: @color-secondary;
+	}
+	&::-webkit-resizer {
+		background-color: transparent;
+	}
+}
+

@@ -1,0 +1,78 @@
+//! clutter.less v0.1.0 | Apache License, Version 2.0 | github.com/chromice/clutter.less
+
+// ==================
+// = Utility styles =
+// ==================
+
+// See HTML5 boilerplate: https://github.com/h5bp/html5-boilerplate
+
+// Allow only vertical resizing of textareas
+textarea {
+	resize: vertical;
+}
+
+// Remove the gap between images, videos, audio and canvas and the bottom of their containers
+audio, canvas, img, svg, video {
+	vertical-align: middle;
+}
+
+
+// Clear floats
+.clearfix () {
+	&:extend(.ext-clearfix all);
+}
+.ext-clearfix {
+	*zoom: 1;
+	&:before, &:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// Image replacement
+.image-replaced () {
+	&:extend(.ext-image-replaced all);
+}
+.ext-image-replaced {
+	overflow: hidden;
+	text-indent: -999em;
+	white-space: nowrap;
+}
+
+
+// Hide from both screenreaders and browsers
+.hidden () {
+	&:extend(.ext-hidden all);
+}
+.ext-hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+// Hide visually... 
+.invisible () {
+	&:extend(.ext-invisible all);
+}
+.ext-invisible {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	
+	// ...but not when focused or active
+	&:active, &:focus {
+		position: static;
+		clip: auto;
+		overflow: visible;
+		height: auto;
+		margin: 0;
+		width: auto;
+	}
+}
