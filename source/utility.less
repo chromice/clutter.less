@@ -85,3 +85,50 @@ audio, canvas, img, svg, video {
 		width: auto;
 	}
 }
+
+// Hyphenate
+.hyphenate () {
+	&:extend(.ext-hyphenate);
+}
+.ext-hyphenate {
+	-ms-word-break: break-all;
+	word-break: break-all;
+	
+	// Non standard for webkit
+	word-break: break-word;
+	
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+// Box models
+.ext-border-box {
+	.box-sizing(border-box);
+}
+.ext-content-box {
+	.box-sizing(content-box);
+}
+.border-box () {
+	&:extend(.ext-border-box all);
+}
+.content-box () {
+	&:extend(.ext-content-box all);
+}
+
+// Shadows
+.drop-shadow (@x; @y; @r; @a) {
+	.box-shadow(@x @y @r rgba(0,0,0,@a));
+}
+.inner-shadow (@x; @y; @r; @a) {
+	.box-shadow(inset @x @y @r rgba(0,0,0,@a));
+}
+
+// Vertical gradient
+.vertical-gradient (@top, @bottom) {
+	background-color: rgb(red(@top), green(@top), blue(@top));
+	background-color: @top;
+	background-image: -webkit-linear-gradient(top, @top, @bottom);
+	background-image: linear-gradient(to bottom, @top, @bottom);
+}
+

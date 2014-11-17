@@ -4,39 +4,11 @@
 // = Prefixed properties =
 // =======================
 
-// Hyphenate
-.hyphenate () {
-	&:extend(.ext-hyphenate);
-}
-.ext-hyphenate {
-	-ms-word-break: break-all;
-	word-break: break-all;
-	
-	// Non standard for webkit
-	word-break: break-word;
-	
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	hyphens: auto;
-}
-
 // Border boxes
 .box-sizing (@model: border-box) {
 	-webkit-box-sizing: @model;
 	-moz-box-sizing: @model;
 	box-sizing: @model;
-}
-.ext-border-box {
-	.box-sizing(border-box);
-}
-.ext-content-box {
-	.box-sizing(content-box);
-}
-.border-box () {
-	&:extend(.ext-border-box all);
-}
-.content-box () {
-	&:extend(.ext-content-box all);
 }
 
 
@@ -54,12 +26,6 @@
 	-webkit-box-shadow: @value;
 	box-shadow: @value;
 }
-.drop-shadow (@x; @y; @r; @a) {
-	.box-shadow(@x @y @r rgba(0,0,0,@a));
-}
-.inner-shadow (@x; @y; @r; @a) {
-	.box-shadow(inset @x @y @r rgba(0,0,0,@a));
-}
 
 
 // Border Radius
@@ -71,23 +37,13 @@
 }
 
 
-// Box gradient
-.vertical-gradient (@start, @end) {
-	background-color: rgb(red(@start), green(@start), blue(@start));
-	background-color: @start;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(@start), to(@end));
-	background-image: -webkit-linear-gradient(top, @start, @end);
-	background-image: -moz-linear-gradient(top, @start, @end);
-	background-image: -o-linear-gradient(top, @start, @end);
-	background-image: linear-gradient(to bottom, @start, @end);
-}
-
 // Control appearance 
 .appearance (@args) {
 	-webkit-appearance: @args;
 	-moz-appearance: @args;
 	appearance: @args;
 }
+
 
 // Background size
 .background-size (@args;) {
@@ -100,42 +56,30 @@
 .transition (@transition;) {
 	@-transition: ~"@{transition}";
 	-webkit-transition: ~`"@{-transition}".replace(/(transform)/, '-webkit-$1')`;
-	-moz-transition: ~`"@{-transition}".replace(/(transform)/, '-moz-$1')`;
-	-o-transition: ~`"@{-transition}".replace(/(transform)/, '-o-$1')`;
 	transition: ~`"@{-transition}"`;
 }
 .transition-property (@property;) {
 	@-property: ~"@{property}";
 	-webkit-transition-property: ~`"@{-property}".replace(/(transform)/, '-webkit-$1')`;
-	-moz-transition-property: ~`"@{-property}".replace(/(transform)/, '-moz-$1')`;
-	-o-transition-property: ~`"@{-property}".replace(/(transform)/, '-o-$1')`;
 	transition-property: ~`"@{-property}"`;
 }
 .transition-duration (@duration;) {
 	-webkit-transition-duration: @duration;
-	-moz-transition-duration: @duration;
-	-o-transition-duration: @duration;
 	transition-duration: @duration;
 }
 .transition-timing-function (@function;) {
 	-webkit-transition-timing-function: @function;
-	-moz-transition-timing-function: @function;
-	-o-transition-timing-function: @function;
 	transition-timing-function: @function;
 }
 .transition-delay (@delay;) {
 	-webkit-transition-delay: @delay;
-	-moz-transition-delay: @delay;
-	-o-transition-delay: @delay;
 	transition-delay: @delay;
 }
+
 
 // Animations
 .animation (@animation;) {
 	-webkit-animation: @animation;
-	-moz-animation: @animation;
-	-ms-animation: @animation;
-	-o-animation: @animation;
 	animation: @animation;
 }
 
@@ -147,15 +91,16 @@
 }
 .transform (@transform;) {
 	-webkit-transform: @transform;
-	-moz-transform: @transform;
 	-ms-transform: @transform;
-	-o-transform: @transform;
 	transform: @transform;
 }
 .transform-origin (@origin;) {
 	-webkit-transform-origin: @origin;
-	-moz-transform-origin: @origin;
 	-ms-transform-origin: @origin;
-	-o-transform-origin: @origin;
 	transform-origin: @origin;
+}
+.transform-style (@style;) {
+	-webkit-transform-style: @style;
+	-ms-transform-style: @style;
+	transform-style: @style;
 }
