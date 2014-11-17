@@ -130,7 +130,21 @@
 	transition-delay: @delay;
 }
 
+// Animations
+.animation (@animation;) {
+	-webkit-animation: @animation;
+	-moz-animation: @animation;
+	-ms-animation: @animation;
+	-o-animation: @animation;
+	animation: @animation;
+}
+
+
 // Transforms
+.perspective (@perspective;) {
+	-webkit-perspective: @perspective;
+	perspective: @perspective;
+}
 .transform (@transform;) {
 	-webkit-transform: @transform;
 	-moz-transform: @transform;
