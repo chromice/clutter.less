@@ -131,6 +131,10 @@ video {
     page-break-after: avoid;
   }
 }
+.transition-test {
+  -webkit-transition: -webkit-transform;
+  transition: transform;
+}
 /*! suit-test v0.1.0 | MIT License | github.com/suitcss */
 /* ==========================================================================
    SUIT: Test
