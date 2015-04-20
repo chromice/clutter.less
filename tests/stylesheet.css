@@ -8,11 +8,17 @@ svg,
 video {
   vertical-align: middle;
 }
+/*
+	Reset lists
+*/
 .ext-reset-list {
   list-style: none;
   padding-left: 0;
   margin: 0;
 }
+/*
+	Clear floated children
+*/
 .ext-clearfix {
   *zoom: 1;
 }
@@ -24,15 +30,24 @@ video {
 .ext-clearfix:after {
   clear: both;
 }
+/*
+	Replaced with an image
+*/
 .ext-image-replaced {
   overflow: hidden;
   text-indent: -999em;
   white-space: nowrap;
 }
+/*
+	Completely hidden
+*/
 .ext-hidden {
   display: none !important;
   visibility: hidden;
 }
+/*
+	Visually hidden
+*/
 .ext-invisible {
   position: absolute;
   clip: rect(0 0 0 0);
@@ -52,22 +67,13 @@ video {
   margin: 0;
   width: auto;
 }
-.ext-hyphenate {
-  -ms-word-break: break-all;
-  word-break: break-all;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
-}
+/*
+	Box models
+*/
 .ext-border-box {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 .ext-content-box {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 .scrollbar-measure {
@@ -130,10 +136,6 @@ video {
   h3 {
     page-break-after: avoid;
   }
-}
-.transition-test {
-  -webkit-transition: -webkit-transform;
-  transition: transform;
 }
 /*! suit-test v0.1.0 | MIT License | github.com/suitcss */
 /* ==========================================================================
